@@ -1,0 +1,214 @@
+Query - 1 : "hurricane isabel damage"
+
+    Lucene Analyzer Result :
+
+        1 Q0 499 1 0.5951749 Lucene_simple_analyzer
+        1 Q0 214 2 0.5124303 Lucene_simple_analyzer
+        1 Q0 212 3 0.5078132 Lucene_simple_analyzer
+        1 Q0 215 4 0.47717983 Lucene_simple_analyzer
+        1 Q0 217 5 0.47028363 Lucene_simple_analyzer
+
+    My Analyzer Result:
+
+        1 Q0 499 1 7.5214353189225305 My_BM25_Simple_Analyzer
+        1 Q0 216 2 7.322042818861173 My_BM25_Simple_Analyzer
+        1 Q0 217 3 7.319059407584799 My_BM25_Simple_Analyzer
+        1 Q0 213 4 7.313496405691682 My_BM25_Simple_Analyzer
+        1 Q0 218 5 7.288249762699944 My_BM25_Simple_Analyzer
+
+    Here we can see that top result matches in both analyzers, other 4 has one common result but if we see top 8 then
+    both analyzers have same results just the order is different which is due to different scoring model used in
+    both analyzers. Due to different scoring models each result set has different scores. In Lucene scores are
+    between 0-1 and in my analyzer has score in between 7-8.
+
+-----------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
+
+Query - 2 : "forecast models"
+
+    Lucene analyzers Result:
+
+        2 Q0 904 1 0.46756545 Lucene_simple_analyzer
+        2 Q0 910 2 0.35798734 Lucene_simple_analyzer
+        2 Q0 908 3 0.3262365 Lucene_simple_analyzer
+        2 Q0 903 4 0.29280344 Lucene_simple_analyzer
+        2 Q0 977 5 0.29228264 Lucene_simple_analyzer
+
+    My Analyzer Result:
+
+        2 Q0 904 1 7.552604994085556 My_BM25_Simple_Analyzer
+        2 Q0 908 2 7.290360367000398 My_BM25_Simple_Analyzer
+        2 Q0 910 3 7.267534679222182 My_BM25_Simple_Analyzer
+        2 Q0 977 4 7.217997329577422 My_BM25_Simple_Analyzer
+        2 Q0 366 5 7.135201039863418 My_BM25_Simple_Analyzer
+
+    Here we can see that top 5 have 4 in common result matches just one differs, but both have same top 10 results
+    just the order is different which is due to different ranking model used in both analyzers.
+
+-----------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
+
+Query - 3 : "green energy canada"
+
+    Lucene analyzers Result:
+
+        3 Q0 227 1 0.26467738 Lucene_simple_analyzer
+        3 Q0 129 2 0.25476593 Lucene_simple_analyzer
+        3 Q0 662 3 0.21958081 Lucene_simple_analyzer
+        3 Q0 945 4 0.20989668 Lucene_simple_analyzer
+        3 Q0 729 5 0.19471467 Lucene_simple_analyzer
+
+    My Analyzer Result:
+
+        3 Q0 729 1 6.865184593849779 My_BM25_Simple_Analyzer
+        3 Q0 978 2 6.427480118069864 My_BM25_Simple_Analyzer
+        3 Q0 227 3 6.270948543933784 My_BM25_Simple_Analyzer
+        3 Q0 868 4 5.6302271687855 My_BM25_Simple_Analyzer
+        3 Q0 935 5 5.3685131287692 My_BM25_Simple_Analyzer
+
+    Here we can see that top 5 have 4 in common result matches just one differs, but both have same top 10 results
+    just the order is different which is due to different ranking model used in both analyzers.
+
+-----------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
+
+Query - 4 : "heavy rains"
+
+    Lucene analyzers Result:
+
+        4 Q0 384 1 0.33631554 Lucene_simple_analyzer
+        4 Q0 603 2 0.237811 Lucene_simple_analyzer
+        4 Q0 444 3 0.20015639 Lucene_simple_analyzer
+        4 Q0 640 4 0.19339082 Lucene_simple_analyzer
+        4 Q0 440 5 0.1880061 Lucene_simple_analyzer
+
+    My Analyzer Result:
+
+        4 Q0 444 1 4.7053260745034 My_BM25_Simple_Analyzer
+        4 Q0 483 2 4.661639895765299 My_BM25_Simple_Analyzer
+        4 Q0 504 3 4.626736370819202 My_BM25_Simple_Analyzer
+        4 Q0 640 4 4.618520103073081 My_BM25_Simple_Analyzer
+        4 Q0 487 5 4.573862424727416 My_BM25_Simple_Analyzer
+
+    Here we can see that top 5 have 4 in common result matches just one differs, but both have same top 10 results
+    just the order is different which is due to different ranking model used in both analyzers.
+
+-----------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
+
+Query - 5 : "hurricane music lyrics"
+
+    Lucene analyzers Result:
+
+        5 Q0 90 1 0.7051871 Lucene_simple_analyzer
+        5 Q0 397 2 0.60131305 Lucene_simple_analyzer
+        5 Q0 410 3 0.39937744 Lucene_simple_analyzer
+        5 Q0 408 4 0.38590306 Lucene_simple_analyzer
+        5 Q0 44 5 0.34119478 Lucene_simple_analyzer
+
+    My Analyzer Result:
+
+        5 Q0 410 1 9.95179828202522 My_BM25_Simple_Analyzer
+        5 Q0 400 2 9.617838362503173 My_BM25_Simple_Analyzer
+        5 Q0 962 3 9.580066355680907 My_BM25_Simple_Analyzer
+        5 Q0 101 4 9.096798581886834 My_BM25_Simple_Analyzer
+        5 Q0 44 5 8.957329803323436 My_BM25_Simple_Analyzer
+
+    Here we can see that top 5 have 4 in common result matches just one differs, but both have same top 10 results
+    just the order is different which is due to different ranking model used in both analyzers.
+
+-----------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
+
+Query - 6 : "accumulated snow"
+
+    Lucene analyzers Result:
+
+        6 Q0 326 1 0.39090508 Lucene_simple_analyzer
+        6 Q0 822 2 0.37006575 Lucene_simple_analyzer
+        6 Q0 993 3 0.34743398 Lucene_simple_analyzer
+        6 Q0 117 4 0.28625688 Lucene_simple_analyzer
+        6 Q0 824 5 0.2577457 Lucene_simple_analyzer
+
+    My Analyzer Result:
+
+        6 Q0 822 1 7.877762848131203 My_BM25_Simple_Analyzer
+        6 Q0 326 2 7.848788542485201 My_BM25_Simple_Analyzer
+        6 Q0 344 3 7.339316611788237 My_BM25_Simple_Analyzer
+        6 Q0 993 4 7.193654083285633 My_BM25_Simple_Analyzer
+        6 Q0 310 5 7.159914325204153 My_BM25_Simple_Analyzer
+
+    Here we can see that top 5 have 4 in common result matches just one differs, but both have same top 10 results
+    just the order is different which is due to different ranking model used in both analyzers.
+
+-----------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
+
+Query - 7 : "snow accumulation"
+
+    Lucene analyzers Result:
+
+        7 Q0 825 1 0.55282235 Lucene_simple_analyzer
+        7 Q0 779 2 0.50425386 Lucene_simple_analyzer
+        7 Q0 553 3 0.39672244 Lucene_simple_analyzer
+        7 Q0 993 4 0.3959698 Lucene_simple_analyzer
+        7 Q0 822 5 0.39348724 Lucene_simple_analyzer
+
+    My Analyzer Result:
+
+        7 Q0 779 1 10.008571964568661 My_BM25_Simple_Analyzer
+        7 Q0 553 2 9.840556455780227 My_BM25_Simple_Analyzer
+        7 Q0 822 3 9.689327326062624 My_BM25_Simple_Analyzer
+        7 Q0 993 4 9.463690007628244 My_BM25_Simple_Analyzer
+        7 Q0 554 5 9.456408566024718 My_BM25_Simple_Analyzer
+
+    Here we can see that top 5 have 4 in common result matches just one differs, but both have same top 10 results
+    just the order is different which is due to different ranking model used in both analyzers.
+
+-----------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
+
+Query - 8 : "massive blizzards blizzard"
+
+    Lucene analyzers Result:
+
+        8 Q0 333 1 0.79576296 Lucene_simple_analyzer
+        8 Q0 117 2 0.7394535 Lucene_simple_analyzer
+        8 Q0 993 3 0.2736631 Lucene_simple_analyzer
+        8 Q0 813 4 0.16994724 Lucene_simple_analyzer
+        8 Q0 710 5 0.169317 Lucene_simple_analyzer
+
+    My Analyzer Result:
+
+        8 Q0 117 1 18.818963112571687 My_BM25_Simple_Analyzer
+        8 Q0 333 2 18.58937352470353 My_BM25_Simple_Analyzer
+        8 Q0 993 3 14.504991068708932 My_BM25_Simple_Analyzer
+        8 Q0 813 4 12.79015927612307 My_BM25_Simple_Analyzer
+        8 Q0 885 5 11.400393759429459 My_BM25_Simple_Analyzer
+
+    Here we can see that top 5 have 4 in common result matches just one differs, but both have same top 10 results
+    just the order is different which is due to different ranking model used in both analyzers.
+
+-----------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
+
+Query - 9 : "new york city subway"
+
+    Lucene analyzers Result:
+
+        9 Q0 708 1 0.4016257 Lucene_simple_analyzer
+        9 Q0 577 2 0.32568282 Lucene_simple_analyzer
+        9 Q0 707 3 0.3213933 Lucene_simple_analyzer
+        9 Q0 543 4 0.22343764 Lucene_simple_analyzer
+        9 Q0 706 5 0.20801637 Lucene_simple_analyzer
+
+    My Analyzer Result:
+
+        9 Q0 708 1 8.394116100510162 My_BM25_Simple_Analyzer
+        9 Q0 577 2 8.03274512189143 My_BM25_Simple_Analyzer
+        9 Q0 970 3 8.026580263250597 My_BM25_Simple_Analyzer
+        9 Q0 415 4 7.676077545881809 My_BM25_Simple_Analyzer
+        9 Q0 543 5 7.630370942945018 My_BM25_Simple_Analyzer
+
+    Here we can see that top 5 have 4 in common result matches just one differs, but both have same top 10 results
+    just the order is different which is due to different ranking model used in both analyzers.

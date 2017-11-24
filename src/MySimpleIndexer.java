@@ -33,18 +33,20 @@ public class MySimpleIndexer {
 
         for (String queryID : queries.keySet()) {
             Map<String, Double> documentScores = new HashMap<>();
-            String[] queryTerms = queries.get(queryID).split(" ");
+            String query = queries.get(queryID);
+            String[] queryTerms = query.split(" ");
+            Map<String, Integer> queryTermFrequency = GetQueryTermFrequency(query);
 
             for(String queryTerm : queryTerms){
 
                 Map<String, Integer> indexData = oneGramIndexer.get(queryTerm);
                 double idf = IDF(queryTerm, documentLengthMap.size(), indexData.size());
+                int qtf = queryTermFrequency.get(queryTerm);
 
                 for(String docId : indexData.keySet()){
                     int tf = indexData.get(docId);
-
                     double term1 = (tf * (k1 + 1)) / (tf + k1 * (1 - b + b * (documentLengthMap.get(docId)/avgdl)));
-                    double term2 = ((k2 + 1) * tf) / (k2 + tf);
+                    double term2 = ((k2 + 1) * qtf) / (k2 + qtf);
 
                     double score = idf * term1 * term2;
 
@@ -88,5 +90,22 @@ public class MySimpleIndexer {
             avgDocLength += docLength;
         }
         return avgDocLength / documentLengthMap.size();
+    }
+
+    private static Map<String, Integer> GetQueryTermFrequency(String query){
+        String[] queryTerms = query.split(" ");
+        Map<String, Integer> queryTermFrequecy = new HashMap<>();
+
+        for(String queryTerm : queryTerms){
+            if(queryTermFrequecy.containsKey(queryTerm)){
+                int freq = queryTermFrequecy.get(queryTerm) + 1;
+                queryTermFrequecy.put(queryTerm, freq);
+            }
+            else {
+                queryTermFrequecy.put(queryTerm, 1);
+            }
+        }
+
+        return queryTermFrequecy;
     }
 }

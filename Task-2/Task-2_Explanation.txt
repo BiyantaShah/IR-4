@@ -1,0 +1,10 @@
+Steps followed by my indexer:
+
+1. Reads the inverted indexer from a file created in HW-3 Task-2
+2. Reads the document length for all documents from file created in HW-3 Task-2
+3. Reads all queries to be queried on corpus from file called "./QueryList.txt"
+4. Now for each query the indexer will calculate score for each document per query term in the query.
+5. After summing all the scores for documents for each query term for given query, it will sort based
+    on score calculated using BM25.
+6. Finally will write those top 100 documents with the specified format into a txt file storing it
+    in folder "./Task-2".

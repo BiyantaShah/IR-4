@@ -41,6 +41,10 @@ public class HW4 {
     public static void main(String[] args) throws IOException {
 
         String indexLocation = null;
+        File indexDir = new File("./Index");
+        if (!indexDir.exists()) {
+            indexDir.mkdir();
+        }
         String s = "./Index";
 
         HW4 indexer = null;
