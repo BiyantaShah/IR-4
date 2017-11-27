@@ -5,11 +5,11 @@ Query - 1 : "hurricane isabel damage"
 
     Lucene Analyzer Result :
 
-        1 Q0 499 1 0.5951749 Lucene_simple_analyzer
-        1 Q0 214 2 0.5124303 Lucene_simple_analyzer
-        1 Q0 212 3 0.5078132 Lucene_simple_analyzer
-        1 Q0 215 4 0.47717983 Lucene_simple_analyzer
-        1 Q0 217 5 0.47028363 Lucene_simple_analyzer
+        1 Q0 499 1 0.5951749 Lucene_simple_analyzer (Hurricane_Isabel)
+        1 Q0 214 2 0.5124303 Lucene_simple_analyzer (Effects_of_Hurricane_Isabel_in_New_Jersey)
+        1 Q0 212 3 0.5078132 Lucene_simple_analyzer (Effects_of_Hurricane_Isabel_in_Delaware)
+        1 Q0 215 4 0.47717983 Lucene_simple_analyzer (Effects_of_Hurricane_Isabel_in_New_York_and_New_England)
+        1 Q0 217 5 0.47028363 Lucene_simple_analyzer (Effects_of_Hurricane_Isabel_in_Pennsylvania)
 
     My Analyzer Result:
 
@@ -21,7 +21,9 @@ Query - 1 : "hurricane isabel damage"
 
     Here we can see that top result matches in both analyzers, other 4 has one common result but if we see top 8 then
     both analyzers have same results just the order is different which is due to different scoring model used in
-    both analyzers. Due to different scoring models each result set has different scores. In Lucene scores are
+    both analyzers. Due to different scoring models each result set has different scores. More over if we compare
+    the term frequency of each query term then the documents ranked higher in my analyzer is high. As we know
+    BM25 is based on topical relevance and thus is proved by the ranking it gave. In Lucene scores are
     between 0-1 and in my analyzer has score in between 7-8.
 
 -----------------------------------------------------------------------------------------------------------------------
@@ -46,7 +48,8 @@ Query - 2 : "forecast models"
         2 Q0 366 5 7.135201039863418 My_BM25_Simple_Analyzer
 
     Here we can see that top 5 have 4 in common result matches just one differs, but both have same top 10 results
-    just the order is different which is due to different ranking model used in both analyzers.
+    just the order is different which is due to different ranking model used in both analyzers. We see that doc 977
+    is found in top 5 of Lucene but not in my analyzer as it has high tf for "forecast" but very low for "models"
 
 -----------------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------------
