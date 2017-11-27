@@ -42,8 +42,8 @@
         Have used docId mapping to decrease the size of result files. Please use "DocId-Mapping.txt"
         if want to see file name.
 
-        - "Task-2_Explanation.txt" file contain the implementation details for task2
+        - "Task-2_Explanation.txt" file contains the implementation details for task2
 
-        - "Analyzer_Result.Comparision.txt" file contain the discussion on Top 5 results from each
+        - "Analyzer_Result_Comparision.txt" file contains the discussion on Top 5 results from each
            IR system for each query.
 
