@@ -22,21 +22,21 @@
                in "./Index" folder, can manually update the path if want to write index
                files to different folder.
 
-             - By default code in MySimpleIndexer.java will try to read all queries
+             - By default code in MySimpleAnalyzer.java will try to read all queries
                from "./QueryList.txt".
 
         2. For task-2, all the deliverable are in folder "./Task-2".
              - To generate 9 tables (one per query) each containing at MOST 100
-               docIDs ranked by score, please run "./src/MySimpleIndexer.java"
+               docIDs ranked by score, please run "./src/MySimpleAnalyzer.java"
                and it will write 9 files per query in folder "/Task-2/"
 
-             - By default code in MySimpleIndexer.java will try to read one gram indexer data
+             - By default code in MySimpleAnalyzer.java will try to read one gram indexer data
                from "./One_Gram_Indexer.txt".
 
-             - By default code in MySimpleIndexer.java will try to read each document's length
+             - By default code in MySimpleAnalyzer.java will try to read each document's length
                data from "./DocumentsLength.txt".
 
-             - By default code in MySimpleIndexer.java will try to read all queries
+             - By default code in MySimpleAnalyzer.java will try to read all queries
               from "./QueryList.txt".
 
         Have used docId mapping to decrease the size of result files. Please use "DocId-Mapping.txt"

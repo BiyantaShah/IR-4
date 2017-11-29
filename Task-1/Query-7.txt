@@ -1,5 +1,5 @@
-7 Q0 825 1 0.55282235 Lucene_simple_analyzer
-7 Q0 779 2 0.50425386 Lucene_simple_analyzer
+7 Q0 779 1 0.55282235 Lucene_simple_analyzer
+7 Q0 825 2 0.50425386 Lucene_simple_analyzer
 7 Q0 553 3 0.39672244 Lucene_simple_analyzer
 7 Q0 993 4 0.3959698 Lucene_simple_analyzer
 7 Q0 822 5 0.39348724 Lucene_simple_analyzer

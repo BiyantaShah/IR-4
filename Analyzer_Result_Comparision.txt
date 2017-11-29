@@ -5,11 +5,11 @@ Query - 1 : "hurricane isabel damage"
 
     Lucene Analyzer Result :
 
-        1 Q0 499 1 0.5951749 Lucene_simple_analyzer (Hurricane_Isabel)
-        1 Q0 214 2 0.5124303 Lucene_simple_analyzer (Effects_of_Hurricane_Isabel_in_New_Jersey)
-        1 Q0 212 3 0.5078132 Lucene_simple_analyzer (Effects_of_Hurricane_Isabel_in_Delaware)
-        1 Q0 215 4 0.47717983 Lucene_simple_analyzer (Effects_of_Hurricane_Isabel_in_New_York_and_New_England)
-        1 Q0 217 5 0.47028363 Lucene_simple_analyzer (Effects_of_Hurricane_Isabel_in_Pennsylvania)
+        1 Q0 499 1 0.5951749 Lucene_simple_analyzer
+        1 Q0 214 2 0.5124303 Lucene_simple_analyzer
+        1 Q0 212 3 0.5078132 Lucene_simple_analyzer
+        1 Q0 215 4 0.47717983 Lucene_simple_analyzer
+        1 Q0 217 5 0.47028363 Lucene_simple_analyzer
 
     My Analyzer Result:
 
@@ -72,8 +72,12 @@ Query - 3 : "green energy canada"
         3 Q0 868 4 5.6302271687855 My_BM25_Simple_Analyzer
         3 Q0 935 5 5.3685131287692 My_BM25_Simple_Analyzer
 
-    Here we can see that top 5 have 4 in common result matches just one differs, but both have same top 10 results
-    just the order is different which is due to different ranking model used in both analyzers.
+    Here we see that both of them have different top document, as Lucene's ranking is favouring high tf of
+    energy, my analyzer scores based on idf value too, which is low for energy then canada thus prefers
+    document 729 as it has high tf of term canada which has high idf. Other thing to notice is that, although
+    document 945 is ranked 4th in Lucene although that document doesn't have term canada, but my ranks it as 12th.
+    Lucene favors high tf regardless of idf which is clearly shown for doc 945 which has tf = 103 for energy
+    though has tf = 0 for canada.
 
 -----------------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------------
@@ -96,9 +100,8 @@ Query - 4 : "heavy rains"
         4 Q0 640 4 4.618520103073081 My_BM25_Simple_Analyzer
         4 Q0 487 5 4.573862424727416 My_BM25_Simple_Analyzer
 
-    Here we can see that top 5 have 4 in common result matches just one differs, but both have same top 10 results
-    just the order is different which is due to different ranking model used in both analyzers.
-
+    Here we see results are quite different as lucene does stemming of terms thus considering rains as rain
+    where as my analyer doesn't use stemmed indexer thus results are quite different.
 -----------------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------------
 
@@ -120,9 +123,8 @@ Query - 5 : "hurricane music lyrics"
         5 Q0 101 4 9.096798581886834 My_BM25_Simple_Analyzer
         5 Q0 44 5 8.957329803323436 My_BM25_Simple_Analyzer
 
-    Here we can see that top 5 have 4 in common result matches just one differs, but both have same top 10 results
-    just the order is different which is due to different ranking model used in both analyzers.
-
+    Here we see that ranks are similar but order is not same, although hurricane is used in my indexer, but due
+    to its high frequency its possible that lucene might have considered it as stopword and thus different ranking.
 -----------------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------------
 
@@ -138,15 +140,14 @@ Query - 6 : "accumulated snow"
 
     My Analyzer Result:
 
-        6 Q0 822 1 7.877762848131203 My_BM25_Simple_Analyzer
-        6 Q0 326 2 7.848788542485201 My_BM25_Simple_Analyzer
+        6 Q0 326 1 7.877762848131203 My_BM25_Simple_Analyzer
+        6 Q0 822 2 7.848788542485201 My_BM25_Simple_Analyzer
         6 Q0 344 3 7.339316611788237 My_BM25_Simple_Analyzer
         6 Q0 993 4 7.193654083285633 My_BM25_Simple_Analyzer
         6 Q0 310 5 7.159914325204153 My_BM25_Simple_Analyzer
 
-    Here we can see that top 5 have 4 in common result matches just one differs, but both have same top 10 results
-    just the order is different which is due to different ranking model used in both analyzers.
-
+    Here we see that top 2 documents are same and in top 10 documentd just the order is different due to usage of
+    different scoring function being used.
 -----------------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------------
 
@@ -154,8 +155,8 @@ Query - 7 : "snow accumulation"
 
     Lucene analyzers Result:
 
-        7 Q0 825 1 0.55282235 Lucene_simple_analyzer
-        7 Q0 779 2 0.50425386 Lucene_simple_analyzer
+        7 Q0 779 1 0.55282235 Lucene_simple_analyzer
+        7 Q0 825 2 0.50425386 Lucene_simple_analyzer
         7 Q0 553 3 0.39672244 Lucene_simple_analyzer
         7 Q0 993 4 0.3959698 Lucene_simple_analyzer
         7 Q0 822 5 0.39348724 Lucene_simple_analyzer
@@ -164,12 +165,12 @@ Query - 7 : "snow accumulation"
 
         7 Q0 779 1 10.008571964568661 My_BM25_Simple_Analyzer
         7 Q0 553 2 9.840556455780227 My_BM25_Simple_Analyzer
-        7 Q0 822 3 9.689327326062624 My_BM25_Simple_Analyzer
+        7 Q0 825 3 9.689327326062624 My_BM25_Simple_Analyzer
         7 Q0 993 4 9.463690007628244 My_BM25_Simple_Analyzer
         7 Q0 554 5 9.456408566024718 My_BM25_Simple_Analyzer
 
-    Here we can see that top 5 have 4 in common result matches just one differs, but both have same top 10 results
-    just the order is different which is due to different ranking model used in both analyzers.
+    Here we can see that top 5 have all 5 in common result matches with top document being same,
+    just the order is different which is due to different scoring model used in both analyzers.
 
 -----------------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------------
@@ -178,8 +179,8 @@ Query - 8 : "massive blizzards blizzard"
 
     Lucene analyzers Result:
 
-        8 Q0 333 1 0.79576296 Lucene_simple_analyzer
-        8 Q0 117 2 0.7394535 Lucene_simple_analyzer
+        8 Q0 117 1 0.79576296 Lucene_simple_analyzer
+        8 Q0 333 2 0.7394535 Lucene_simple_analyzer
         8 Q0 993 3 0.2736631 Lucene_simple_analyzer
         8 Q0 813 4 0.16994724 Lucene_simple_analyzer
         8 Q0 710 5 0.169317 Lucene_simple_analyzer
@@ -192,8 +193,7 @@ Query - 8 : "massive blizzards blizzard"
         8 Q0 813 4 12.79015927612307 My_BM25_Simple_Analyzer
         8 Q0 885 5 11.400393759429459 My_BM25_Simple_Analyzer
 
-    Here we can see that top 5 have 4 in common result matches just one differs, but both have same top 10 results
-    just the order is different which is due to different ranking model used in both analyzers.
+    Here we see top 4 being in same order as they are most topic relevant based on high idf and high tf.
 
 -----------------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------------
@@ -216,5 +216,5 @@ Query - 9 : "new york city subway"
         9 Q0 415 4 7.676077545881809 My_BM25_Simple_Analyzer
         9 Q0 543 5 7.630370942945018 My_BM25_Simple_Analyzer
 
-    Here we can see that top 5 have 4 in common result matches just one differs, but both have same top 10 results
-    just the order is different which is due to different ranking model used in both analyzers.
+    Here we see that top document is same and in top 10 documentd just the order is different due to usage of
+    different scoring function being used.

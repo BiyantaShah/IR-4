@@ -8,7 +8,7 @@ import java.util.Map;
 /**
  * Created by Harshil on 22/11/17.
  */
-public class MySimpleIndexer {
+public class MySimpleAnalyzer {
 
     public static void main(String[] args) throws IOException {
 
